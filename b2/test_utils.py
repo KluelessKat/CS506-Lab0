@@ -1,6 +1,8 @@
+## Please fill in all the parts labeled as ### YOUR CODE HERE
+
 import numpy as np
 import pytest
-from utils import dot_product, cosine_similarity, nearest_neighbor
+from utils import *
 
 def test_dot_product():
     vector1 = np.array([1, 2, 3])
@@ -11,23 +13,19 @@ def test_dot_product():
     assert result == 32, f"Expected 32, but got {result}"
     
 def test_cosine_similarity():
-    # Example vectors
+    ### YOUR CODE HERE
     vector1 = np.array([1, 2, 3])
     vector2 = np.array([4, 5, 6])
+    # (v1 dot v2) / (||v1|| * ||v2||)
     
-    # Call the cosine_similarity function
     result = cosine_similarity(vector1, vector2)
     
-    # Calculate expected cosine similarity manually
-    dot_product_val = np.dot(vector1, vector2)  # = 32
-    norm1 = np.linalg.norm(vector1)             # = sqrt(1^2 + 2^2 + 3^2) = sqrt(14)
-    norm2 = np.linalg.norm(vector2)             # = sqrt(4^2 + 5^2 + 6^2) = sqrt(77)
-    expected_result = dot_product_val / (norm1 * norm2)  # 32 / (sqrt(14) * sqrt(77))
+    expected_result = dot_product(vector1, vector2)/((np.linalg.norm(vector1))*np.linalg.norm(vector2))
     
     assert np.isclose(result, expected_result), f"Expected {expected_result}, but got {result}"
 
 def test_nearest_neighbor():
-    # Define a set of vectors (rows) and a target vector
+    ### YOUR CODE HERE
     vectors = np.array([[1, 2, 3],
                         [4, 5, 6],
                         [7, 8, 9]])
