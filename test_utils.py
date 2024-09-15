@@ -28,10 +28,12 @@ def test_cosine_similarity():
 
 def test_nearest_neighbor():
     # Define a set of vectors (rows) and a target vector
-    vectors = np.array([[1, 2, 3],
-                        [4, 5, 6],
-                        [7, 8, 9]])
-    target_vector = np.array([2, 3, 4])
+    target_vector = np.array([1, 2])
+    vectors = np.array([
+        [1, 1],
+        [2, 2],
+        [3, 3]
+    ])
     
     # Call the nearest_neighbor function
     result = nearest_neighbor(target_vector, vectors)
